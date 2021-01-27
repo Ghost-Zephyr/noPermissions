@@ -1,0 +1,10 @@
+name: BlankPlugin
+main: dev.bitsnthings.mc.blank.BlankPlugin
+version: 1.0
+api-version: 1.13
+commands:
+  noperms:
+    description: Command for managing the noPermissions plugin.
+    usage: /noperms
+    aliases: [np,nopermissions]
+    permission: nopermissions.noperms
