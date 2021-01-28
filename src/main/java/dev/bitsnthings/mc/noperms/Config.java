@@ -38,7 +38,7 @@ public final class Config {
       "bukkit.command.reload","minecraft.command.op","minecraft"
     }));
     defaults.put("true", Arrays.asList(new String[] {
-      "minecraft.command.kill","minecraft.command.seed","minecraft.command.help","minecraft.command.list"
+      "minecraft.command.kill","minecraft.command.seed","minecraft.command.list"
     }));
     defaults.put("op", Arrays.asList(new String[] {
       "bukkit.command.plugins","bukkit.command.version","bukkit.command.help"
