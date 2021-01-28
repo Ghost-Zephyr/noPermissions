@@ -33,8 +33,8 @@
    -->
 
     <groupId>dev.bitsnthings.mc</groupId>
-    <artifactId>blank</artifactId>
-    <name>BlankPlugin</name>
+    <artifactId>noperms</artifactId>
+    <name>noPermissions</name>
     <version>1.0.0</version>
  
     <!-- ############################################################################### -->
@@ -50,7 +50,7 @@
     <properties>
  
         <!-- The full path to your plugin's main class, so that Spigot can find and load it -->
-        <main.class>dev.bitsnthings.mc.blank.BlankPlugin</main.class>
+        <main.class>dev.bitsnthings.mc.noperms.noPermissions</main.class>
        
         <!-- The Foundation version - change to latest version from https://github.com/kangarko/Foundation/releases -->
         <foundation.version>LATEST</foundation.version>
