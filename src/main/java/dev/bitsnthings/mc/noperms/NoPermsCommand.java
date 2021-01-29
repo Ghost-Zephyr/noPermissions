@@ -1,7 +1,6 @@
 package dev.bitsnthings.mc.noperms;
 
 import org.bukkit.command.*;
-import org.bukkit.ChatColor;
 
 public class NoPermsCommand implements CommandExecutor {
   @Override

@@ -17,14 +17,13 @@ import java.util.List;
 
 public class LoadedEvent implements Listener {
   Logger log = NoPerms.getInstance().getLogger();
-  Config config = NoPerms.getInstance().getInternalConfig();
   PluginManager pluginManager = Bukkit.getPluginManager();
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onPlayerJoin(ServerLoadEvent event) {
     log.info("Starting permission magic.");
-    setDefaultPerms(config.defaultFalse, PermissionDefault.FALSE);
-    setDefaultPerms(config.defaultTrue, PermissionDefault.TRUE);
-    setDefaultPerms(config.defaultOp, PermissionDefault.OP);
+    setDefaultPerms(Config.defaultFalse, PermissionDefault.FALSE);
+    setDefaultPerms(Config.defaultTrue, PermissionDefault.TRUE);
+    setDefaultPerms(Config.defaultOp, PermissionDefault.OP);
     log.info("Done messing with default permissions!");
   }
   private void setDefaultPerms(List<String> perms, PermissionDefault permissionDefault) {
