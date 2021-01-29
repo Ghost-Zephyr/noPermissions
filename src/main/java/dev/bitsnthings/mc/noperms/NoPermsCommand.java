@@ -9,7 +9,8 @@ public class NoPermsCommand implements CommandExecutor {
     if (args.length > 0 && args.length < 3) {
       switch (args[0].toLowerCase()) {
         case "get":
-          sender.sendMessage("fuck off!");
+          // Try to get permission with name args[1]
+          sender.sendMessage(String.format("Niggacat!"));
         break;
         default: return false;
       }

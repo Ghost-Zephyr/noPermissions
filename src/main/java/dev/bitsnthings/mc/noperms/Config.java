@@ -1,7 +1,6 @@
 package dev.bitsnthings.mc.noperms;
 
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.ChatColor;
 
 import java.util.HashMap;
 import java.util.Arrays;
@@ -47,7 +46,6 @@ public final class Config {
       config.addDefault(String.format("defaults.%s", key), defaults.get(key));
     }
     config.addDefault("hiddenCommands", Arrays.asList(new String[] {
-      //"?","help",
       "minecraft:help","minecraft:list","minecraft:me","minecraft:msg","minecraft:teammsg","minecraft:tell","minecraft:tm","minecraft:trigger","minecraft:w",
       "bukkit:?","bukkit:about","bukkit:help","bukkit:pl","bukkit:plugins","bukkit:ver","bukkit:version",
       "about","pl","plugins","ver","version"

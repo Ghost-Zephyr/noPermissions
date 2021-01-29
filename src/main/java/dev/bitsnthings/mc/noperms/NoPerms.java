@@ -17,9 +17,9 @@ public class NoPerms extends JavaPlugin {
   public void onEnable() {
     plugin = this;
     config = new Config();
-    pluginManager.registerEvents(new LoadedEvent(), this);
-    pluginManager.registerEvents(new CommandSendEvent(), this);
     pluginManager.registerEvents(new CommandPreprocessEvent(), this);
+    pluginManager.registerEvents(new CommandSendEvent(), this);
+    pluginManager.registerEvents(new LoadedEvent(), this);
     this.getCommand("noperms").setExecutor(new NoPermsCommand());
   }
   @Override
