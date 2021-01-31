@@ -14,32 +14,28 @@ import org.bukkit.Bukkit;
 
 import java.util.logging.Logger;
 import java.util.List;
+import java.util.Set;
 
 public class LoadedEvent implements Listener {
   Logger log = NoPerms.getInstance().getLogger();
   PluginManager pluginManager = Bukkit.getPluginManager();
 	@EventHandler(priority=EventPriority.HIGH)
-	public void onPlayerJoin(ServerLoadEvent event) {
+	public void onServerLoaded(ServerLoadEvent event) {
     log.info("Starting permission magic.");
     setDefaultPerms(Config.defaultFalse, PermissionDefault.FALSE);
     setDefaultPerms(Config.defaultTrue, PermissionDefault.TRUE);
     setDefaultPerms(Config.defaultOp, PermissionDefault.OP);
-    log.info("Done messing with default permissions!");
+    log.info("Done messing with default permissions.");
   }
   private void setDefaultPerms(List<String> perms, PermissionDefault permissionDefault) {
     for (String permName: perms) {
       Permission perm = pluginManager.getPermission(permName);
-      perm.setDefault(permissionDefault);
-      pluginManager.recalculatePermissionDefaults(perm);
+      if (perm == null) log.warning(String.format("Could not get permission with name %s!", permName));
+      else {
+        perm.setDefault(permissionDefault);
+        pluginManager.recalculatePermissionDefaults(perm);
+      }
     }
   }
 }
-/*
-import java.util.Set;
 
-    Set<Permission> allperms = Bukkit.getPluginManager().getPermissions();
-    for(Permission perm: allperms) {
-      log.info(String.format("%s: %s", perm.getName(), perm.getDefault()));
-      if (perm.getDefault() == PermissionDefault.TRUE) log.info("^ Has PermissionDefault.TRUE");
-    }
-*/
