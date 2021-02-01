@@ -12,13 +12,13 @@ public final class Config {
   private static FileConfiguration config;
   private static HashMap<String, List<String>> defaults = new HashMap<String, List<String>>();
 
-  public static HashMap<UUID, PermissionAttachment> perms = new HashMap<UUID, PermissionAttachment>();
+  public HashMap<UUID, PermissionAttachment> perms = new HashMap<UUID, PermissionAttachment>();
 
-  public static List<String> hiddenCommands;
-  public static List<String> defaultFalse;
-  public static List<String> defaultTrue;
-  public static List<String> defaultOp;
-  public static List<String> gods;
+  public List<String> hiddenCommands;
+  public List<String> defaultFalse;
+  public List<String> defaultTrue;
+  public List<String> defaultOp;
+  public List<String> gods;
 
 	public Config() {
     config = NoPerms.getInstance().getConfig();

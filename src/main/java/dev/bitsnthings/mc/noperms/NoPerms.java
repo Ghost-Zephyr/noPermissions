@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 public class NoPerms extends JavaPlugin {
   private static PluginManager pluginManager = Bukkit.getPluginManager();
   private final Logger logger = Logger.getLogger("NoPerms");
-  private static Config config;
   public static NoPerms plugin;
+  public static Config config;
   @Override
   public void onEnable() {
     plugin = this;

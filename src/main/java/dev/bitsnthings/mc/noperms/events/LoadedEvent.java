@@ -1,7 +1,6 @@
 package dev.bitsnthings.mc.noperms.events;
 
 import dev.bitsnthings.mc.noperms.NoPerms;
-import dev.bitsnthings.mc.noperms.Config;
 
 import org.bukkit.event.server.ServerLoadEvent;
 import org.bukkit.permissions.PermissionDefault;
@@ -14,7 +13,6 @@ import org.bukkit.Bukkit;
 
 import java.util.logging.Logger;
 import java.util.List;
-import java.util.Set;
 
 public class LoadedEvent implements Listener {
   Logger log = NoPerms.getInstance().getLogger();
@@ -22,9 +20,9 @@ public class LoadedEvent implements Listener {
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onServerLoaded(ServerLoadEvent event) {
     log.info("Starting permission magic.");
-    setDefaultPerms(Config.defaultFalse, PermissionDefault.FALSE);
-    setDefaultPerms(Config.defaultTrue, PermissionDefault.TRUE);
-    setDefaultPerms(Config.defaultOp, PermissionDefault.OP);
+    setDefaultPerms(NoPerms.config.defaultFalse, PermissionDefault.FALSE);
+    setDefaultPerms(NoPerms.config.defaultTrue, PermissionDefault.TRUE);
+    setDefaultPerms(NoPerms.config.defaultOp, PermissionDefault.OP);
     log.info("Done messing with default permissions.");
   }
   private void setDefaultPerms(List<String> perms, PermissionDefault permissionDefault) {
