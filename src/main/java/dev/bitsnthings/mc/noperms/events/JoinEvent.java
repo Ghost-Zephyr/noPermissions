@@ -20,8 +20,10 @@ public class JoinEvent implements Listener {
   Logger log = NoPerms.getInstance().getLogger();
 	@EventHandler(priority=EventPriority.NORMAL)
 	public void onPlayerJoin(PlayerJoinEvent event) {
+    /* Get the player and UUID. */
     Player player = event.getPlayer();
     UUID uuid = player.getUniqueId();
+    /* Give god UUIDs from config all permissions. */
     if (!NoPerms.config.gods.contains(uuid.toString())) return;
     Set<Permission> allperms = Bukkit.getPluginManager().getPermissions();
     PermissionAttachment attachment = player.addAttachment(NoPerms.plugin);

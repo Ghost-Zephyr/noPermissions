@@ -19,6 +19,7 @@ public class LoadedEvent implements Listener {
   PluginManager pluginManager = Bukkit.getPluginManager();
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onServerLoaded(ServerLoadEvent event) {
+    /* Set default permissions from config. */
     log.info("Starting permission magic.");
     setDefaultPerms(NoPerms.config.defaultFalse, PermissionDefault.FALSE);
     setDefaultPerms(NoPerms.config.defaultTrue, PermissionDefault.TRUE);
