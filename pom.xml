@@ -8,9 +8,9 @@
     <artifactId>noperms</artifactId>
     <name>noPermissions</name>
     <version>1.0.0</version>
- 
+
     <!-- ############################################################################### -->
- 
+
     <properties>
         <main.class>dev.bitsnthings.mc.noperms.noPermissions</main.class>
         <spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
@@ -59,7 +59,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
- 
             <!--
                The second plugin is the shade plugin, packaging every library with
                the "compile" scope (see dependencies)
